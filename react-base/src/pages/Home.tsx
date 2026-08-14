@@ -62,8 +62,6 @@ export const Home = () => {
     const favoritoAtual = !itemAtual?.favorito;
     const response = await TodoApi.updateFavorite(idFav, favoritoAtual);
 
-    console.log(response);
-
     if (response && response.id) {
       console.log("Resposta valida! Vamos atualizar!");
       setLista(

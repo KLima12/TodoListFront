@@ -136,7 +136,7 @@ export const Detail = () => {
       return; // Parando execução;
     }
     try {
-      if (mode == "edit" && editingId) {
+      if (mode === "edit" && editingId) {
         setIsSaving(true); // Aqui isSaving vai ser salvando...
         const response = await TodoDetails.PutDetail(
           editingId,
@@ -166,12 +166,7 @@ export const Detail = () => {
         );
 
         if (response) {
-          setListDetalhes({
-            id: response.id,
-            detalhes: response.detalhes || formValues.detalhes,
-            prioridade: response.prioridade || formValues.prioridade,
-            concluido: response.concluido || formValues.concluido,
-          });
+          setListDetalhes(response);
 
           setEditingId(Number(response.id) || null);
           setMode("view");

@@ -26,7 +26,6 @@ export const TodoDetails = {
     concluido: boolean,
   ) {
     try {
-      console.log("Concluido vindo: ", concluido);
       const response = await api.patch(`/api/detalhes/${id}/`, {
         detalhes: detalhe,
         prioridade: prioridade,
@@ -44,7 +43,6 @@ export const TodoDetails = {
     prioridade: string,
     concluido: boolean,
   ) {
-    console.log("Chegou aqui no CreateDetail");
     try {
       const response = await api.post(`/api/detalhes/`, {
         id: id,
@@ -54,7 +52,6 @@ export const TodoDetails = {
       });
 
       if (response) {
-        console.log("response retornado: ", response.data);
         return response.data;
       }
     } catch (error) {
