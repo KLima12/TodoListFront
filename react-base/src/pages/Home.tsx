@@ -59,6 +59,8 @@ export const Home = () => {
     if (!itemAtual) return;
 
     // Retorna underfined em vez de dar erro
+
+    // Favorito atual me diz qual boolean tá no favorito. True ou False.
     const favoritoAtual = !itemAtual?.favorito;
     const response = await TodoApi.updateFavorite(idFav, favoritoAtual);
 
